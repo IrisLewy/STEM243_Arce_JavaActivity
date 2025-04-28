@@ -1,0 +1,103 @@
+<body>
+    <!-- Discounts and Tax Rules -->
+    <!-- 1. If the total price of a mouse exceeds 1000, a 10% discount will be applied. -->
+    <!-- 2. If the total price of a keyboard exceeds 2000, a 15% discount will be applied. -->
+    <!-- 3. If the total price of a monitor exceeds 4000, a 7% discount will be applied. -->
+    <!-- 4. If the total price of a motherboard exceeds 6000, a 6% discount will be applied. -->
+    <!-- 5. If the total price of 2 remaining items exceeds 10000, a 10% discount will be applied. -->
+    <!-- 6. A 5% student discount will be applied to the selected item. -->
+    <!-- 7. If the total price (after discounts) exceeds 5000, an 8% tax will be applied. -->
+     
+        <script text="text/javascript">
+            const mouse_price = 750;
+            const keyboard_price = 1500;
+            const monitor_price = 2000;
+            const motherboard_price = 4000;
+            const harddrive_price = 2800;
+            const table_price = 1500;
+     
+            let product = prompt("Enter Product Name (mouse/keyboard/monitor/motherboard/harddrive/table):");
+            let quantity = prompt("Enter Quantity:");
+            let student = prompt("Are you a student? (yes/no):");
+
+        //MOUSE
+         if(product == "mouse"){
+            let total_price = mouse_price * quantity;
+            document.write("Total Payment: " + total_price);
+        if(total_price > 1000){
+            let discount = total_price * 0.10;
+            total_price = total_price - discount;
+            document.write("<br>Discount: (10%)" + discount);
+            document.write("<br>Discount Applied: " + total_price);
+            }
+        }
+        //KEYBOARD
+        else if(product == "keyboard"){
+            let total_price = keyboard_price * quantity;
+            document.write("Total Payment: " + total_price);
+        if(total_price > 2000){
+            let discount = total_price * 0.15;
+            total_price = total_price - discount;
+            document.write("<br>Discount: (15%)" + discount);
+            document.write("<br>Discount Applied: " + total_price);
+        }}
+        else{
+            document.write("Invalid Product Name");
+        }
+        //MONITOR
+        if(product == "monitor"){
+                let total_price = monitor_price * quantity;
+                document.write("Total Payment: " + total_price);
+            if(total_price > 4000){
+                let discount = total_price * 0.07;
+                total_price = total_price - discount;
+                document.write("<br>Discount: (7%)" + discount);
+                document.write("<br>Discount Applied: " + total_price);
+            }
+        }
+        //MOTHERBOARD
+        else if(product == "motherboard"){
+            let total_price = motherboard_price * quantity;
+            document.write("Total Payment: " + total_price);
+        if(total_price > 6000){
+            let discount = total_price * 0.06;
+            total_price = total_price - discount;
+            document.write("<br>Discount: (6%)" + discount);
+            document.write("<br>Discount Applied: " + total_price);
+        }}
+        //LAST 2 PRODUCTS
+        if(product == "harddrive"){
+                let total_price = harddrive_price * quantity;
+                document.write("Total Payment: " + total_price);
+            if(total_price > 10000){
+                let discount = total_price * 0.10;
+                total_price = total_price - discount;
+                document.write("<br>Discount: " + discount);
+                document.write("<br>Discount Applied: " + total_price);
+            }
+        }
+        //LAST 2 PRODUCTS
+        else if(product == "table"){
+            let total_price = table_price * quantity;
+            document.write("Total Payment: " + total_price);
+        if(total_price > 10000){
+            let discount = total_price * 0.10;
+            total_price = total_price - discount;
+            document.write("<br>Discount: " + discount);
+            document.write("<br>Discount Applied: " + total_price);
+        }}
+        //IF TOTAL PRICE EXCEEDS 5000, APPLY 8% TAX
+        if(total_price > 5000){
+            let tax = total_price * 0.08;
+            total_price += tax;
+            document.write("<br>Tax (8%): " + tax);
+        }
+        // ARE THEY A STUDENT?
+        if (student == "yes") {
+            let student_discount = total_price * 0.05;
+            total_price -= student_discount;
+            document.write("<br>Student Discount (5%): -" + student_discount);
+        }
+        
+    </script>
+    </body>
