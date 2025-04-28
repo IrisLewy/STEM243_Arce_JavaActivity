@@ -86,17 +86,21 @@
             document.write("<br>Discount: " + discount);
             document.write("<br>Discount Applied: " + total_price);
         }}
-        //IF TOTAL PRICE EXCEEDS 5000, APPLY 8% TAX
-        if(total_price > 5000){
+        //TAX
+        if (total_price > 5000) {
             let tax = total_price * 0.08;
-            total_price += tax;
-            document.write("<br>Tax (8%): " + tax);
+            total_price = total_price + tax;
+            document.write("<br>Tax: " + tax);
+            document.write("<br>Total Payment after Tax: " + total_price);
+        } else {
+            document.write("<br>Total Payment: " + total_price);
         }
         // ARE THEY A STUDENT?
         if (student == "yes") {
-            let student_discount = total_price * 0.05;
-            total_price -= student_discount;
-            document.write("<br>Student Discount (5%): -" + student_discount);
+            let discount = 0.05 * quantity;
+            document.write("Student Discount: " + discount);
+        } else if (student == "no") {
+            document.write("No Student Discount");
         }
         
     </script>
